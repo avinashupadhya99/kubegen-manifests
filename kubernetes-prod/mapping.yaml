@@ -6,4 +6,4 @@ metadata:
 spec:
   prefix: /
   rewrite: /
-  service: kubegen-service:80
+  service: kubegen:80

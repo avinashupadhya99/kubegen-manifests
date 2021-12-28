@@ -1,0 +1,9 @@
+---
+apiVersion: getambassador.io/v2
+kind: Mapping
+metadata:
+  name: kubegen
+spec:
+  prefix: /
+  rewrite: /
+  service: kubegen-service:80

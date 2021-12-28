@@ -6,11 +6,11 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      app: kubegen-deployment
+      app: kubegen
   template:
     metadata:
       labels:
-        app: kubegen-deployment
+        app: kubegen
     spec:
       containers:
       - name: kubegen-application

@@ -4,7 +4,7 @@ metadata:
   name: kubegen-service
 spec:
   selector:
-    app: KubeGen
+    app: kubeGen
   ports:
     - protocol: TCP
       port: 80

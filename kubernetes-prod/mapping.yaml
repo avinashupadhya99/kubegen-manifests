@@ -4,6 +4,6 @@ kind: Mapping
 metadata:
   name: kubegen
 spec:
+  hostname: "*"
   prefix: /
-  rewrite: /
   service: kubegen:80

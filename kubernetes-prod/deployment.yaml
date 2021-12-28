@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubegen-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: kubegen-deployment
+  template:
+    metadata:
+      labels:
+        app: kubegen-deployment
+    spec:
+      containers:
+      - name: kubegen-application
+        image: avinashupadhya99/kubegen:0.1
+        ports:
+          - containerPort: 3000

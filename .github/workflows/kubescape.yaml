@@ -1,0 +1,23 @@
+name: Scan YAML files with Kubescape
+on: push
+
+jobs:
+  kubescape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: avinashupadhya99/kubescape-action@main
+        with:
+          args: "--format junit --output kubescape-results.json"
+          files: "kubernetes-prod/*.yaml"
+          framework: |
+            nsa,devopsbest
+          # control: |
+          #   Configured liveness probe,Pods in default namespace,Bash/cmd inside container
+      - name: Archive kubescape scan results
+        uses: actions/upload-artifact@v2
+        with:
+          name: kubescape-scan-report
+          path: kubescape-results.json
+
+

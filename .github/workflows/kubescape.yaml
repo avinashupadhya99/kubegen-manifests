@@ -8,7 +8,7 @@ jobs:
       - uses: actions/checkout@master
       - uses: avinashupadhya99/kubescape-action@main
         with:
-          args: "--format junit --output kubescape-results.json"
+          args: "--format json --output kubescape-results.json"
           files: "kubernetes-prod/*.yaml"
           framework: |
             nsa,devopsbest

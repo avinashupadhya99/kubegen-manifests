@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: network-policy
+spec:
+  podSelector:
+    matchLabels:
+      app: kubegen
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:    
+  - from:
+    - ipBlock:
+        cidr: 0.0.0.0/0
+        except:
+        - 172.17.1.0/24
+    ports:
+    - protocol: TCP
+      port: 3000
+  egress: 
+  - to:
+    - ipBlock:
+        cidr: 10.0.0.0/24
+    ports:
+    - protocol: TCP
+      port: 5978
+ 

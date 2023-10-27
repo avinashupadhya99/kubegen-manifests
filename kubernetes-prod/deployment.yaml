@@ -21,3 +21,7 @@ spec:
         env:
         - name: DATABASE_PASSWORD
           value: 43ir567rhui2364
+        securityContext:
+          runAsNonRoot: true
+          allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: true
